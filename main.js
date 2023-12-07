@@ -99,6 +99,14 @@ function CreateSurfaceData()
         
     }
 
+    for (let j=0; j<360; j+=5) {
+        for(let i=0; i<360; i+=5)
+        vertexList.push( (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.cos(deg2rad(j)), 
+                         (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(j)), 
+                         (1/50)*( ( 6 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ( 90 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(i)) );
+        
+    }
+
     return vertexList;
 }
 
