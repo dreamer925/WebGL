@@ -90,9 +90,21 @@ function CreateSurfaceData()
 {
     let vertexList = [];
 
+    //for the equation used a=2, b=3, c=1, d=4
     for (let i=0; i<360; i+=5) {
-        vertexList.push( Math.sin(deg2rad(i)), 1, Math.cos(deg2rad(i)) );
-        vertexList.push( Math.sin(deg2rad(i)), 0, Math.cos(deg2rad(i)) );
+        for(let j=0; j<360; j+=5)
+        vertexList.push( (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.cos(deg2rad(j)), 
+                         (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(j)), 
+                         (1/50)*( ( 6 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ( 90 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(i)) );
+        
+    }
+
+    for (let j=0; j<360; j+=5) {
+        for(let i=0; i<360; i+=5)
+        vertexList.push( (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.cos(deg2rad(j)), 
+                         (1/50)*( ((6 * (1 + Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ((90 * (1-Math.cos(deg2rad(i)))) / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(j)), 
+                         (1/50)*( ( 6 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) + ( 90 / (Math.sqrt(4 * Math.sin(deg2rad(j)) * Math.sin(deg2rad(j)) + (9 * Math.cos(deg2rad(j)) * Math.cos(deg2rad(j)))))) ) * Math.sin(deg2rad(i)) );
+        
     }
 
     return vertexList;

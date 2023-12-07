@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Launch index.html",
-            "type": "chrome",
+            "type": "msedge",
             "request": "launch",
             "file": "${workspaceFolder}/index.html"
         },
