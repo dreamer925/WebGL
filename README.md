@@ -1,14 +1,16 @@
-# PA1
+# PA2
 
 Project that accompanies VGGI credit module.
 
 ## Requirements
-Render wire-frame model representing analytical surface using WebGL as per individual variant.
+
+- Implement vertex and pixel shaders that calculate intensity of illumination for the surface coming from a single light source:    Irgb=Ambient+Diffuse+Specular
+- Make sure the surface is rendered with filled polygons (triangles).
 ### Variant 1
 Virich Cyclic Surface
 
 ## Result
 
-![image](https://github.com/dreamer925/WebGL/assets/66631277/2ec2c365-4359-45c8-8c9f-41776567321c)
+![image](https://github.com/dreamer925/WebGL/assets/66631277/037e46ec-8567-46e7-bce3-f5349b0ad3aa)
 
-![image](https://github.com/dreamer925/WebGL/assets/66631277/8968de9e-7610-4f18-b3cb-7a061ebe1555)
+![image](https://github.com/dreamer925/WebGL/assets/66631277/909055f1-b903-40b9-b264-abdb00d5ba03)
